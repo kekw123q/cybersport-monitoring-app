@@ -16,9 +16,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
+allowed_origins = [
+    "http://localhost:3000",
+    # ДОБАВЬТЕ ЭТУ СТРОКУ:
+    "https://cybersport-monitoring-8td6uzx4z-vladislavs-projects-d9d7f37c.vercel.app"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
