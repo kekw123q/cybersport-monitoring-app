@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+requests
+python-dotenv
+pydantic
+httpx # Асинхронная библиотека для HTTP-запросов, лучше подходит для FastAPI
