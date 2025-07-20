@@ -161,7 +161,7 @@ async def get_news(game: Optional[str] = Query("all", enum=["all", "CS2", "Dota 
         "from": from_date,     # НОВОЕ: Только за последний месяц
         "language": "ru",
         "sortBy": "publishedAt",
-        "pageSize": 50         # НОВОЕ: Увеличили размер страницы
+        "pageSize": 5         # НОВОЕ: Увеличили размер страницы
     }
 
     try:
