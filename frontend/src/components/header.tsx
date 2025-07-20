@@ -10,17 +10,17 @@ export default function Header() {
                 <nav>
                     <ul className="flex space-x-4">
                         <li>
-                            <Link href="http://localhost:3000" className="text-gray-700 hover:text-gray-900">
+                            <Link href="/" className="text-gray-700 hover:text-gray-900">
                                 Главная
                             </Link>
                         </li>
                         <li>
-                            <Link href="http://localhost:3000/Schedule" className="text-gray-700 hover:text-gray-900">
+                            <Link href="/Schedule" className="text-gray-700 hover:text-gray-900">
                                 Расписание
                             </Link>
                         </li>
                         <li>
-                            <Link href="http://localhost:3000/results" className="text-gray-700 hover:text-gray-900">
+                            <Link href="/results" className="text-gray-700 hover:text-gray-900">
                                 Результаты
                             </Link>
                         </li>
