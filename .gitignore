@@ -1,0 +1,28 @@
+# Файлы окружения (содержат секретные ключи!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Папка с зависимостями Node.js (очень большая)
+node_modules/
+
+# Сборочная папка Next.js
+.next/
+out/
+
+# Логи и временные файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Кэш и временные файлы Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
