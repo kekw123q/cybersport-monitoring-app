@@ -163,11 +163,13 @@ export default function Results() {
                 }
                 const data: ResultMatch[] = await response.json();
                 setMatches(data);
-            } catch (err: any) {
+            } catch (err) {
                 setError("Не удалось загрузить результаты матчей. Попробуйте позже.");
-                console.error(err);
-            } finally {
-                setLoading(false);
+                if (err instanceof Error) {
+                    console.error(err.message);
+                } else {
+                    console.error("An unknown error occurred", err);
+                }
             }
         };
         fetchResults();
