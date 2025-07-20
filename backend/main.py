@@ -18,18 +18,19 @@ app = FastAPI(
 
 allowed_origins = [
     "http://localhost:3000",
-    # ДОБАВЬТЕ ЭТУ СТРОКУ:
-    "https://cybersport-monitoring-8td6uzx4z-vladislavs-projects-d9d7f37c.vercel.app"
 ]
+
+# Регулярное выражение для всех адресов Vercel
+origin_regex = r"https://cybersport-monitoring.*\.vercel\.app"
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_origin_regex=origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # --- Pydantic Модели (без изменений) ---
 class MatchBase(BaseModel):
     id: int
