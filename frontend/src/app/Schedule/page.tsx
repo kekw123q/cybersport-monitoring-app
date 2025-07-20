@@ -204,13 +204,11 @@ export default function Schedule() {
                 }
                 const data: MatchItem[] = await response.json();
                 setMatches(data);
-            } catch (err) {
+            } catch (err: any) {
                 setError("Не удалось загрузить расписание матчей.");
-                if (err instanceof Error) {
-                    console.error(err.message);
-                } else {
-                    console.error("An unknown error occurred", err);
-                }
+                console.error(err);
+            } finally {
+                setLoading(false);
             }
         };
         fetchMatches();

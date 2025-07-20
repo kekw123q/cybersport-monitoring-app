@@ -191,13 +191,11 @@ export default function Home() {
                 }
                 const data: NewsItem[] = await response.json();
                 setNews(data);
-            } catch (err) {
+            } catch (err: any) {
                 setError("Не удалось загрузить новости.");
-                if (err instanceof Error) {
-                    console.error(err.message);
-                } else {
-                    console.error("An unknown error occurred", err);
-                }
+                console.error(err);
+            } finally {
+                setLoading(false);
             }
         };
         fetchNews();
