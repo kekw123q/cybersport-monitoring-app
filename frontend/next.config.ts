@@ -5,6 +5,26 @@ const nextConfig = {
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
+    async headers() {
+        return [
+            {
+                // Применяем эти заголовки ко всем роутам в приложении
+                source: '/:path*',
+                headers: [
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'ALLOW-FROM https://vk.com/', // Старый способ, менее поддерживаемый
+                    },
+                    {
+                        key: 'Content-Security-Policy',
+                        // Это современный и правильный способ.
+                        // Он разрешает встраивание вашего сайта в iframe на указанных доменах.
+                        value: "frame-ancestors 'self' *.vk.com *.vk-cdn.net *.vkforms.com;",
+                    },
+                ],
+            },
+        ];
+    },
     images: {
         remotePatterns: [
             {
