@@ -14,10 +14,9 @@ export default function Header() {
                             flex flex-col items-center text-center gap-4
                             md:flex-row md:justify-between md:text-left">
 
-                <h1 className="text-2xl font-bold">
+                <h1 className="text-2xl font-bold text-gray-900">
                     Киберспортивный мониторинг
                 </h1>
-
                 <nav>
                     <ul className="flex space-x-4">
                         <li>
