@@ -28,6 +28,23 @@ const nextConfig = {
              // },
         ],
     },
+    async headers() {
+        return [
+            {
+                source: '/:path*',
+                headers: [
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'ALLOW-FROM https://vk.com/', // Разрешаем встраивание для vk.com
+                    },
+                    {
+                        key: 'Content-Security-Policy',
+                        value: "frame-ancestors 'self' *.vk.com *.vk-cdn.net *.vkforms.com;", // Более современный аналог
+                    }
+                ],
+            },
+        ];
+    },
 };
 export default nextConfig;
 module.exports = nextConfig;
