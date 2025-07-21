@@ -1,22 +1,22 @@
+// src/components/header.tsx
 "use client";
 
 import Link from "next/link";
+import { useIsVK } from "@/hooks/useIsVK"; // <-- Импортируем наш хук
 
 export default function Header() {
+    const isVK = useIsVK(); // <-- Используем хук
+
+    // Если приложение открыто в VK, не показываем Header
+    if (isVK) {
+        return null;
+    }
+
+    // Если не в VK, показываем обычный Header
     return (
         <header className="bg-white shadow-md">
-            {/*
-              Адаптивные классы Tailwind:
-              - По умолчанию (mobile): flex-col (элементы в столбик), items-center (по центру), gap-4 (отступ между ними).
-              - На экранах 'md' и больше: flex-row (в ряд), justify-between (по краям).
-            */}
-            <div className="container mx-auto px-4 py-4
-                            flex flex-col items-center text-center gap-4
-                            md:flex-row md:justify-between md:text-left">
-
-                <h1 className="text-2xl font-bold text-gray-900">
-                    Киберспортивный мониторинг
-                </h1>
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                <h1 className="text-2xl font-bold">Киберспортивный мониторинг</h1>
                 <nav>
                     <ul className="flex space-x-4">
                         <li>

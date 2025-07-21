@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@vkontakte/icons": "^3.13.0",
+    "@vkontakte/vk-bridge": "^2.15.7",
+    "@vkontakte/vk-bridge-react": "^1.1.0",
+    "@vkontakte/vkui": "^7.5.1"
+  }
+}
