@@ -8,18 +8,17 @@ const nextConfig = {
     async headers() {
         return [
             {
-                // Применяем эти заголовки ко всем роутам в приложении
                 source: '/:path*',
                 headers: [
                     {
                         key: 'X-Frame-Options',
-                        value: 'ALLOW-FROM https://vk.com/', // Старый способ, менее поддерживаемый
+                        value: 'ALLOWALL', // Нестандартно, но некоторые браузеры понимают
                     },
                     {
                         key: 'Content-Security-Policy',
-                        // Это современный и правильный способ.
-                        // Он разрешает встраивание вашего сайта в iframe на указанных доменах.
-                        value: "frame-ancestors 'self' *.vk.com *.vk-cdn.net *.vkforms.com;",
+                        // ВНИМАНИЕ: Это разрешает встраивание откуда угодно.
+                        // Используйте только для отладки!
+                        value: "frame-ancestors *;",
                     },
                 ],
             },
