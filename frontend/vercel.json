@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self' *.vk.com *.vk-cdn.net *.vkforms.com;"
+          "value": "frame-ancestors *;"
         }
       ]
     }

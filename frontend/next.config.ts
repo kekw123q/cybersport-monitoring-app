@@ -5,25 +5,6 @@ const nextConfig = {
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
-    async headers() {
-        return [
-            {
-                source: '/:path*',
-                headers: [
-                    {
-                        key: 'X-Frame-Options',
-                        value: 'ALLOWALL', // Нестандартно, но некоторые браузеры понимают
-                    },
-                    {
-                        key: 'Content-Security-Policy',
-                        // ВНИМАНИЕ: Это разрешает встраивание откуда угодно.
-                        // Используйте только для отладки!
-                        value: "frame-ancestors *;",
-                    },
-                ],
-            },
-        ];
-    },
     images: {
         remotePatterns: [
             {
